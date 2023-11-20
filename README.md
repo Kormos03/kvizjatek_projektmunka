@@ -10,5 +10,14 @@ Json adatbázisok: pár default highscore minden egyes böngésző indításnál
 Score: Kérdés + idő. Nehézségtől függő pontszám + idő pl. 15 sec előtt jár a plusz pontszám, utána nem
 Kvíz: kérdés alatta 4 gomb ahol a gombok title-ja a jelenlegi válaszok
 
+Adattagok: 
+Id : string
+A : string = Első választási lehetőség
+B : string = Második választási lehetőség
+C : string = Harmadik választási lehetőség
+D : string = Negyedik választási lehetőség
+
+
+
 
   
