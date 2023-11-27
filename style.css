@@ -6,6 +6,17 @@ body {
     background-color: #11487B;
 }
 
+
+table col {
+    size: 50px;
+}
+
+table tr {
+    size: 50px;
+}
+
+
+
 /* The switch - the box around the slider */
 .switch {
     position: relative;
