@@ -3,20 +3,21 @@
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <link rel="icon" type="image/svg+xml" href="kvizjatek_logo.jpeg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link href="style.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
     crossorigin="anonymous"></script>
 
-  <title>Kvízjáték-test</title>
+  <title>Kvízjáték</title>
 </head>
 
-<body class="bg-info">
+<body>
   <h1 class="">Kvízjáték</h1>
-  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <nav class="navbar navbar-expand-lg" id="navbar">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">Navbar</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -29,10 +30,10 @@
             <a class="nav-link active" aria-current="page" href="#">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="about.html">A játékról</a>
+            <a class="nav-link active" href="about.html">A játékról</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="settings.html" role="button" aria-expanded="false">
+            <a class="nav-link active" href="settings.html" role="button" aria-expanded="false">
               Beállítások
             </a>
           </li>
@@ -47,7 +48,7 @@
   <h3>Játékmódok</h3>
 
   <div class="row">
-    <div class="card col" style="width: 10rem;">
+    <div class="card col-md-4" style="width: 20rem;">
       <img src="defa_gamemode_card_img.png" class="card-img-top" alt="...">
       <div class="card-body">
         <h5 class="card-title">Rendes Játék</h5>
@@ -55,25 +56,24 @@
         <a href="game.html" class="btn btn-primary">Indítás</a>
       </div>
     </div>
-    <div class="card col" style="width: 10rem;">
+    <div class="card col-md-4" style="width: 20rem;">
       <img src="valtakozo_nehezseg_card_img.jpeg" class="card-img-top" alt="...">
       <div class="card-body">
         <h5 class="card-title">Váltakozó nehézség</h5>
         <p class="card-text">Random erősségű kérdések jelennek meg egymás után</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+        <a href="game.html" class="btn btn-primary">Go somewhere</a>
       </div>
     </div>
-    <div class="card col" style="width: 10rem;">
+    <div class="card col-md-4" style="width: 20rem;">
       <img src="time_run.jpg" class="card-img-top" alt="...">
       <div class="card-body">
         <h5 class="card-title">Időfutam</h5>
         <p class="card-text">Minden egyes kérdésre 30 másodperc áll rendelkezésre, ha nem sikerül ez idő alatt
           válaszolni, akkor nem jár a pont.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+        <a href="game.html" class="btn btn-primary">Go somewhere</a>
       </div>
     </div>
   </div>
-
   <div id="app"></div>
   <script type="module" src="/src/main.ts"></script>
 </body>
