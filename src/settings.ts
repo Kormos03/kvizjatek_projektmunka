@@ -19,12 +19,18 @@ class Settings implements Isettings {
 }
 
 const settings = new Settings();
+
+
 /**
  * Default settings
  */
 document.addEventListener('DOMContentLoaded', () => {
 
+    //Erre kellene írni egy metódust, hogy ne kelljen leírni sokszor ugyanazt
+    document.getElementById('tori_slider')!.addEventListener('click', () => {
+        settings.tori = (document.getElementById('tori_slider')! as HTMLInputElement).checked;
+        console.log(settings);
+    })
     console.log(settings);
-
-
 });
+
