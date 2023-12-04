@@ -29,7 +29,7 @@ function gameplayLoop()
 
 function createQuestion(diff, genre)
 {
-	let rand = new random(0, 1)
+	//let rand = new random(0, 1)
 }
 
 function questionHandler()
