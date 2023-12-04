@@ -1,3 +1,4 @@
-//import './style.css'
-//cmd-ben C:\Users\aronk\Documents\GitHub\kvizjatek_projektmunka itt kell:  "git add *" a push-hoz
-/**Ezt a tagváltozó fölé kell rakni, és akkor odaírja minden egyes 0 */
+document.getElementById("maingame").addEventListener("click", () => {localStorage.setItem('mode', 'main')})
+document.getElementById("random").addEventListener("click", () => {localStorage.setItem('mode', 'random')})
+document.getElementById("timed").addEventListener("click", () => {localStorage.setItem('mode', 'timed')})
+// sends gamemode information cross-page
