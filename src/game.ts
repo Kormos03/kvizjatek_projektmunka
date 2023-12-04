@@ -1,9 +1,14 @@
+import 'bootstrap/dist/css/bootstrap.css';
 import './style.css'
 import questions from './questions.json';
 import scores from './scores.json';
+import genreList from './settings.ts';
 
 const questionArray = [];
 const settings = ["easy", ""]; //placeholder settings: difficulty, genre. will be imported later
+
+// const difficulty = localStorage.getItem('difficulty')
+// const genres = genreList;
 
 const filteredList = [];
 
