@@ -3,7 +3,11 @@ import questions from './questions.json';
 import scores from './scores.json';
 
 const questionArray = [];
-const settings = ["easy", 103, true]; //placeholder settings: difficulty, genre, showsource
+const settings = ["easy", 103, true]; //placeholder settings: difficulty, genre, showsource. will be imported later
+
+const genre1 = [];
+const genre2 = [];
+const genre0 = [];
 
 function init()
 {
@@ -20,9 +24,14 @@ function init()
 	questionHandler();
 }
 
-function loadQuestions(item, index)
+function gameplayLoop()
 {
-	questionArray.push(item);
+	
+}
+
+function createQuestion(diff, genre)
+{
+	let rand = new random(0, 1)
 }
 
 function questionHandler()
@@ -60,31 +69,30 @@ function questionHandler()
 			source = false;
 	}
 	questionListCreation()
+	createQuestion(diff, genre)
 }
 
 function questionListCreation()
 {
-	const genre101 = [];
-	const genre102 = [];
-	const genreless = [];
 	questionArray.forEach((item, index) => {
 		switch(item.genre) {
 		case 101:
-			genre101.push(item)
+			genre1.push(item)
 		break;
 		case 102:
-			genre102.push(item)
+			genre2.push(item)
 		break;
 		default:
-			genreless.push(item)
+			genre0.push(item)
 			// default to genre-less
 	}
 	})
+	
 }
 
-function pickQuestion()
+function loadQuestions(item, index)
 {
-	
+	questionArray.push(item);
 }
 
 function buttonCreation(x){
