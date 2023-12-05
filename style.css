@@ -7,20 +7,25 @@ body {
 }
 
 
-table col {
-    size: 50px;
+/* Add a gray background color and some padding to the footer */
+footer {
+    background-color: #f2f2f289;
+    padding: 25px;
 }
+
 
 table tr {
-    size: 50px;
+    line-height: 40px;
+    text-align: center;
 }
-
-
 
 /* The switch - the box around the slider */
 .switch {
     position: relative;
-    display: inline-block;
+    display: inline-flex;
+    /* Modified */
+    align-items: center;
+    /* Added */
     width: 50px;
     height: 25px;
 }

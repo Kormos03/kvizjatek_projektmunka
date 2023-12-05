@@ -1,36 +1,104 @@
 import { Isettings } from './Interface_settings'
-class Settings implements Isettings {
-    tori: boolean = (document.getElementById('tori_slider')! as HTMLInputElement).checked;
-    matek: boolean = (document.getElementById('matek_slider')! as HTMLInputElement).checked;
-    info: boolean = (document.getElementById('info_slider')! as HTMLInputElement).checked;
-    biosz: boolean = (document.getElementById('biosz_slider')! as HTMLInputElement).checked;
-    fizika: boolean = (document.getElementById('fizika_slider')! as HTMLInputElement).checked;
-    kemia: boolean = (document.getElementById('kemia_slider')! as HTMLInputElement).checked;
 
-    constructor() {
-        this.tori = (document.getElementById('tori_slider')! as HTMLInputElement).checked = true;
-        this.matek = (document.getElementById('matek_slider')! as HTMLInputElement).checked = true;
-        this.info = (document.getElementById('info_slider')! as HTMLInputElement).checked = true;
-        this.biosz = (document.getElementById('biosz_slider')! as HTMLInputElement).checked = true;
-        this.fizika = (document.getElementById('fizika_slider')! as HTMLInputElement).checked = true;
-        this.kemia = (document.getElementById('kemia_slider')! as HTMLInputElement).checked = true;
 
-    }
+export class Settings implements Isettings {
+
+    tori: boolean;
+    matek: boolean;
+    info: boolean;
+    biosz: boolean;
+    fizika: boolean;
+    kemia: boolean;
+
+
 }
-
-const settings = new Settings();
+export const settings = new Settings();
+defaultSettings();
 
 
 /**
  * Default settings
  */
+
+function getSettings(slider: string, setting: string) {
+    settings[setting as keyof Settings] = (document.getElementById(slider)! as HTMLInputElement).checked;
+    localStorage.setItem(setting, (document.getElementById(slider)! as HTMLInputElement).checked.toString());
+    console.log(settings);
+    return setting;
+}
+
+function defaultSettings() {
+    if (!localStorage.getItem('hasDefaultSettingsRun')) {
+        document.addEventListener('DOMContentLoaded', () => {
+            (document.getElementById('tori_slider')! as HTMLInputElement).checked = true;
+            (document.getElementById('matek_slider')! as HTMLInputElement).checked = true;
+            (document.getElementById('info_slider')! as HTMLInputElement).checked = true;
+            (document.getElementById('biosz_slider')! as HTMLInputElement).checked = true;
+            (document.getElementById('fizika_slider')! as HTMLInputElement).checked = true;
+            (document.getElementById('kemia_slider')! as HTMLInputElement).checked = true;
+        })
+        settings.tori = true;
+        settings.matek = true;
+        settings.info = true;
+        settings.biosz = true;
+        settings.fizika = true;
+        settings.kemia = true;
+
+        localStorage.setItem('hasDefaultSettingsRun', 'true');
+        localStorage.setItem('tori', 'true');
+        localStorage.setItem('matek', 'true');
+        localStorage.setItem('info', 'true');
+        localStorage.setItem('biosz', 'true');
+        localStorage.setItem('fizika', 'true');
+        localStorage.setItem('kemia', 'true');
+    }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
+    const tori_slider = document.getElementById('tori_slider')! as HTMLInputElement;
+    const matek_slider = document.getElementById('matek_slider')! as HTMLInputElement;
+    const info_slider = document.getElementById('info_slider')! as HTMLInputElement;
+    const biosz_slider = document.getElementById('biosz_slider')! as HTMLInputElement;
+    const fizika_slider = document.getElementById('fizika_slider')! as HTMLInputElement;
+    const kemia_slider = document.getElementById('kemia_slider')! as HTMLInputElement;
+    settings.tori = localStorage.getItem('tori') === 'true';
+    settings.matek = localStorage.getItem('matek') === 'true';
+    settings.info = localStorage.getItem('info') === 'true';
+    settings.biosz = localStorage.getItem('biosz') === 'true';
+    settings.fizika = localStorage.getItem('fizika') === 'true';
+    settings.kemia = localStorage.getItem('kemia') === 'true';
+    (document.getElementById('tori_slider')! as HTMLInputElement).checked = settings.tori;
+    (document.getElementById('matek_slider')! as HTMLInputElement).checked = settings.matek;
+    (document.getElementById('info_slider')! as HTMLInputElement).checked = settings.info;
+    (document.getElementById('biosz_slider')! as HTMLInputElement).checked = settings.biosz;
+    (document.getElementById('fizika_slider')! as HTMLInputElement).checked = settings.fizika;
+    (document.getElementById('kemia_slider')! as HTMLInputElement).checked = settings.kemia;
 
     //Erre kellene írni egy metódust, hogy ne kelljen leírni sokszor ugyanazt
     document.getElementById('tori_slider')!.addEventListener('click', () => {
-        settings.tori = (document.getElementById('tori_slider')! as HTMLInputElement).checked;
-        console.log(settings);
-    })
-    console.log(settings);
+        getSettings('tori_slider', 'tori');
+    });
+
+    document.getElementById('matek_slider')!.addEventListener('click', () => {
+        getSettings('matek_slider', 'matek');
+    });
+
+    document.getElementById('info_slider')!.addEventListener('click', () => {
+        getSettings('info_slider', 'info');
+    });
+
+    document.getElementById('biosz_slider')!.addEventListener('click', () => {
+        getSettings('biosz_slider', 'biosz');
+    });
+
+    document.getElementById('fizika_slider')!.addEventListener('click', () => {
+        getSettings('fizika_slider', 'fizika');
+    });
+
+    document.getElementById('kemia_slider')!.addEventListener('click', () => {
+        getSettings('kemia_slider', 'kemia');
+    });
+
+
 });
 
