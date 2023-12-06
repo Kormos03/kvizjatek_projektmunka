@@ -1,13 +1,18 @@
 import { Isettings } from './Interface_settings'
 
-
+/**Ez a beállítások osztály, amely tartalmazza az összes beállítást */
 export class Settings implements Isettings {
-
+    /**A beállítások adattagja, amellyel a történelem témát lehet ki-be kapcsolni*/
     tori: boolean;
+    /**A beállítások adattagja, amellyel a matematika témát lehet ki-be kapcsolni */
     matek: boolean;
+    /**A beállítások adattagja, amellyel a informatika témát lehet ki-be kapcsolni */
     info: boolean;
+    /**A beállítások adattagja, amellyel a biológia témát lehet ki-be kapcsolni */
     biosz: boolean;
+    /**A beállítások adattagja, amellyel a fizika témát lehet ki-be kapcsolni */
     fizika: boolean;
+    /**A beállítások adattagja, amellyel a kémia témát lehet ki-be kapcsolni */
     kemia: boolean;
 
 

@@ -1,5 +1,6 @@
 import './style.css'
 import questions from './questions.json';
+
 import scores from './scores.json';
 
 const questionArray = [];
@@ -7,41 +8,37 @@ const settings = ["easy", ""]; //placeholder settings: difficulty, genre. will b
 
 const filteredList = [];
 
-function init()
-{
+function init() {
 	questions.forEach(loadQuestions);
 	const question = document.createElement("h1");
 	question.id = "question"
 	question.innerText = localStorage.getItem('mode')
 	document.getElementById("app").appendChild(question);
-	
+
 	for (let i = 1; i < 5; i++) {
 		buttonCreation(i)
 	}
-	
+
 	questionHandler();
 }
 
-function gameplayLoop()
-{
-	
+function gameplayLoop() {
+
 }
 
-function createQuestion(diff, genre)
-{
+function createQuestion(diff, genre) {
 	let rand = new random(0, 1)
 }
 
-function questionHandler()
-{
+function questionHandler() {
 	let diff;
-	switch(settings[0]) {
+	switch (settings[0]) {
 		case "easy":
 			diff = 1;
-		break;
+			break;
 		case "normal":
 			diff = 5;
-		break;
+			break;
 		default:
 			// default to hard mode
 			diff = 9;
@@ -50,25 +47,23 @@ function questionHandler()
 	createQuestion(diff, settings[1])
 }
 
-function questionListCreation()
-{
+function questionListCreation() {
 	questionArray.forEach((item, index) => {
 		if (item.genre = settings[1]) {
 			greeting = "Good day";
 		}
 	})
-	
+
 }
 
-function loadQuestions(item, index)
-{
+function loadQuestions(item, index) {
 	questionArray.push(item);
 }
 
-function buttonCreation(x){
+function buttonCreation(x) {
 	const button = document.createElement("button");
-	button.id = String.fromCharCode(64+x);
-	button.innerText = String.fromCharCode(64+x) + ": lorem ipsum"
+	button.id = String.fromCharCode(64 + x);
+	button.innerText = String.fromCharCode(64 + x) + ": lorem ipsum"
 	document.getElementById("app").appendChild(button);
 }
 
