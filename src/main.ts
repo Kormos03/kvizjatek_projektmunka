@@ -1,8 +1,9 @@
+//arra gondoltam, hogy lehetne minden  játék közben olyan kép ami a témához illik
+import genreList from "./settings";
 document.getElementById("maingame").addEventListener("click", () => { localStorage.setItem('mode', 'main') })
 document.getElementById("random").addEventListener("click", () => { localStorage.setItem('mode', 'random') })
 document.getElementById("timed").addEventListener("click", () => { localStorage.setItem('mode', 'timed') })
 // sends gamemode information cross-page
-import { settings } from "./settings";
 setTimeout(() => {
-    console.log(settings);
+    console.log(genreList);
 }, 1000);
