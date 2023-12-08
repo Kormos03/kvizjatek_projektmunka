@@ -1,7 +1,7 @@
 import { IGenres } from './Interface_genres'
 import 'bootstrap/dist/css/bootstrap.css';
 import './style.css';
-//a játék az videójáték?
+//a játék az a videójáték?
 const genreList = [{ name: "ÁLTALÁNOS", val: true }, { name: "BIOLÓGIA", val: true }, { name: "ÉPÍTÉSZET", val: true }, { name: "FILM", val: true }, { name: "FÖLDRAJZ", val: true }, { name: "IRODALOM", val: true }, { name: "JÁTÉK", val: true }, { name: "KONYHA", val: true }, { name: "KÉPZŐMŰVÉSZET", val: true }, { name: "MAGYARORSZÁG", val: true }, { name: "MŰVÉSZET", val: true }, { name: "NYELV", val: true }, { name: "OPERA", val: true }, { name: "ORSZÁGOK", val: true }, { name: "SPORT", val: true }, { name: "SZÍNHÁZ", val: true }, { name: "TECHNIKA", val: true }, { name: "TUDOMÁNY", val: true }, { name: "TÖRTÉNELEM", val: true }, { name: "VALLÁS", val: true }, { name: "ZENE", val: true }]
 
 export default genreList;

@@ -1,4 +1,4 @@
-//arra gondoltam, hogy lehetne minden  játék közben olyan kép ami a témához illik
+
 import genreList from "./settings";
 document.getElementById("maingame").addEventListener("click", () => { localStorage.setItem('mode', 'main') })
 document.getElementById("random").addEventListener("click", () => { localStorage.setItem('mode', 'random') })

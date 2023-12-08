@@ -1,7 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.css';
 import './style.css'
 import questions from './questions.json';
-
+//Majd hozzá kellene adni, hogy az a kép jelenjen meg a háttérben amilyen téma van a képek a public/genre_images-be vannak
 import scores from './scores.json';
 import genreList from './settings.ts';
 
