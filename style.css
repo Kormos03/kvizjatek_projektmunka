@@ -1,15 +1,18 @@
 body {
     background-color: teal;
+
 }
 
 .navbar {
     background-color: #11487B;
 }
 
-
 #question {
-    color: ;
+    color: white;
+    /* Initial color before blend mode is applied */
+    mix-blend-mode: difference;
 }
+
 
 /* Add a gray background color and some padding to the footer */
 footer {
