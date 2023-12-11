@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="kvizjatek_logo.jpeg" />
+  <link rel="icon" type="image/svg+xml" href="main_icon.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 
@@ -11,10 +11,22 @@
 </head>
 
 <body>
+  <div id="settings" style="display: none;"></div>
+  <script>
+    fetch('settings.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('settings').innerHTML = data;
+      });
+  </script>
+
+</html>
+
+<body>
   <h1 class="">Kvízjáték</h1>
-  <nav class="navbar navbar-expand-lg" id="navbar">
+  <nav class="navbar navbar-expand-lg navbar-light" id="navbar">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Navbar</a>
+      <a class="navbar-brand" href="index.html">Home</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -22,29 +34,34 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="about.html">A játékról</a>
-          </li>
-          <li class="nav-item">
             <a class="nav-link active" href="settings.html" role="button" aria-expanded="false">
               Beállítások
             </a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="leaderboard.html" role="button" aria-expanded="false">
+              Ranglista
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="about.html">A játékról</a>
+          </li>
         </ul>
-        <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
       </div>
     </div>
   </nav>
-  <h3>Játékmódok</h3>
-
   <div class="row">
+    <h2>Üdvözöllek a Kvízjátékban!</h2>
+    <p>A Kvízjáték egy interaktív és szórakoztató módszer arra, hogy teszteld a tudásodat különböző
+      témákban. Engedd, hogy az agyad kihívás elé állítsuk és fedezz fel új információkat, miközben élvezed a
+      játék izgalmát!</p>
+    <h3>Játékmódok</h3>
+
+
     <div class="card col-md-4" style="width: 20rem;">
-      <img src="defa_gamemode_card_img.png" class="card-img-top" alt="...">
+      <div class="card-img-top img-fluid">
+        <img src="defa_gamemode_card_img.png" class="card-img-top" alt="...">
+      </div>
       <div class="card-body">
         <h5 class="card-title">Rendes Játék</h5>
         <p class="card-text">Egyre nehezebb kérdések lesznek, minnél messzebb jutott a játékos</p>
@@ -52,11 +69,15 @@
       </div>
     </div>
     <div class="card col-md-4" style="width: 20rem;">
-      <img src="valtakozo_nehezseg_card_img.jpeg" class="card-img-top" alt="...">
+      <div class="card-img-top img-fluid">
+        <div class="card-img-top img-fluid">
+          <img src="valtakozo_nehezseg_card_img.jpg" class="card-img-top" alt="...">
+        </div>
+      </div>
       <div class="card-body">
         <h5 class="card-title">Váltakozó nehézség</h5>
         <p class="card-text">Random erősségű kérdések jelennek meg egymás után</p>
-        <a href="game.html" id="random" class="btn btn-primary">Go somewhere</a>
+        <a href="game.html" id="random" class="btn btn-primary">Indítás</a>
       </div>
     </div>
     <div class="card col-md-4" style="width: 20rem;">
@@ -65,12 +86,13 @@
         <h5 class="card-title">Időfutam</h5>
         <p class="card-text">Minden egyes kérdésre 30 másodperc áll rendelkezésre, ha nem sikerül ez idő alatt
           válaszolni, akkor nem jár a pont.</p>
-        <a href="game.html" id="timed" class="btn btn-primary">Go somewhere</a>
+        <a href="game.html" id="timed" class="btn btn-primary">Indítás</a>
       </div>
     </div>
   </div>
   <div id="app"></div>
   <script type="module" src="/src/main.ts"></script>
+  <script type="module" src="/src/settings.ts"></script>
 </body>
 
 </html>
