@@ -24,7 +24,7 @@
 
 <body>
   <h1 class="">Kvízjáték</h1>
-  <nav class="navbar navbar-expand-lg" id="navbar">
+  <nav class="navbar navbar-expand-lg navbar-light" id="navbar">
     <div class="container-fluid">
       <a class="navbar-brand" href="index.html">Home</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -42,10 +42,6 @@
             <a class="nav-link active" href="about.html">A játékról</a>
           </li>
         </ul>
-        <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
       </div>
     </div>
   </nav>
@@ -53,7 +49,9 @@
 
   <div class="row">
     <div class="card col-md-4" style="width: 20rem;">
-      <img src="defa_gamemode_card_img.png" class="card-img-top" alt="...">
+      <div class="card-img-top img-fluid">
+        <img src="defa_gamemode_card_img.png" class="card-img-top" alt="...">
+      </div>
       <div class="card-body">
         <h5 class="card-title">Rendes Játék</h5>
         <p class="card-text">Egyre nehezebb kérdések lesznek, minnél messzebb jutott a játékos</p>
@@ -61,7 +59,11 @@
       </div>
     </div>
     <div class="card col-md-4" style="width: 20rem;">
-      <img src="valtakozo_nehezseg_card_img.jpeg" class="card-img-top" alt="...">
+      <div class="card-img-top img-fluid">
+        <div class="card-img-top img-fluid">
+          <img src="valtakozo_nehezseg_card_img.jpg" class="card-img-top" alt="...">
+        </div>
+      </div>
       <div class="card-body">
         <h5 class="card-title">Váltakozó nehézség</h5>
         <p class="card-text">Random erősségű kérdések jelennek meg egymás után</p>
