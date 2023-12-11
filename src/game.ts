@@ -9,7 +9,7 @@ const questionArray = [];
 const mode = localStorage.getItem('mode');
 const difficulty = localStorage.getItem('difficulty')
 
-const filteredList = [];
+const currentQuestions = [];
 
 function init()
 {
@@ -57,20 +57,49 @@ function questionHandler()
 
 function questionListCreation()
 {
-	// questionArray.forEach((item, index) => {
-		// if (item.genre = settings[1]) {
-			
-		// }
-	// })
+	switch(mode) {
+		case "random":
+			console.log("hi")
+		break;
+		case "timed":
+			console.log("hi")
+		break;
+		default:
+			for (let i = 1; i <= 15; i++) {
+				let j = i
+				// J is necessary incase a category lacks questions of certain difficulty; defaults to lower difficulty
+				let tempList = [];
+				let noneCheck = false;
+				let dupeCheck = false;
+				let picked;
+				while (!noneCheck) {
+					questionArray.forEach((item, index) => {
+						if (item.difficulty == j) {tempList.push(item); noneCheck = true;}
+					})
+					while (!dupeCheck) {
+						let lengthCheck = tempList.length;
+						if (lengthCheck == 0) {noneCheck = false; break;}
+						picked = Math.floor(Math.random()*(tempList.length-1))
+						currentQuestions.forEach((item, index) => {
+							if (item == tempList[picked]){
+								tempList.splice(picked, picked+1);
+							}
+						})
+						if (lengthCheck == tempList.length) {dupeCheck = true;}
+					}
+					if (noneCheck) {currentQuestions.push(tempList[picked])} else {j -= 1}
+				}
+			}
+			console.log(currentQuestions)
+		break;
+	};
 	
 }
 
 function loadQuestions(item, index)
 {
 	let loadGenre = item.genre;
-	if (localStorage.getItem(loadGenre) == "true") {questionArray.push(item); console.log("push")}
-	// if (genreList.loadGenre == true) { console.log("yes") } else {console.log("no")}
-	// questionArray.push(item);
+	if (localStorage.getItem(loadGenre) == "true") {questionArray.push(item)}
 }
 
 function buttonCreation(x){
