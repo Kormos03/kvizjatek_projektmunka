@@ -1,0 +1,3 @@
+const genreList = ["ÁLTALÁNOS","BIOLÓGIA","ÉPÍTÉSZET","FILM","FÖLDRAJZ","IRODALOM","JÁTÉK","KONYHA","KÉPZŐMŰVÉSZET","MAGYARORSZÁG","MŰVÉSZET","NYELV","OPERA","ORSZÁGOK","SPORT","SZÍNHÁZ","TECHNIKA","TUDOMÁNY","TÖRTÉNELEM","VALLÁS","ZENE"]
+
+export default genreList;
